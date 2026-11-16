@@ -3,34 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>وسام التسامح</title>
+<title>وسام التسامح 🤍</title>
 <style>
-body{margin:0;font-family:system-ui;background:#;color:white;text-align:center;padding:20px}
-.card{background:white;color:#;max-width:420px;margin:30px auto;padding:30px 20px;border-radius:25px}
+body{margin:0;font-family:system-ui;background:#FFF8E7;text-align:center;padding:20px}
+.card{background:white;max-width:420px;margin:auto;padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
 .medal{font-size:90px}
 input{width:90%;padding:14px;border-radius:12px;border:1px solid #ddd;font-size:18px;text-align:center}
-button{background:#;color:white;border:0;padding:14px 30px;border-radius:12px;font-size:18px;font-weight:bold}
-#result{display:none;margin-top:20px}
+button{background:#7C4DFF;color:white;border:0;padding:14px 25px;border-radius:12px;font-size:18px;margin-top:15px;width:95%}
+#result{display:none;margin-top:20px;background:#F3EDFF;padding:20px;border-radius:15px}
+#result h2{color:#5B2CFF}
+.share{background:#25D366;margin-top:10px}
 </style>
 </head>
 <body>
-<h1>🤍 حملة التسامح</h1>
-<p>تسامح، وارتقي، وخل قلبك أكبر</p>
 <div class="card">
 <div class="medal">🏅</div>
-<h1>وسام التسامح</h1>
+<h1>وسام التسامح 🤍</h1>
+<p>تسامح، وارتقي، وخل قلبك أكبر</p>
 <p>اكتب اسمك واحصل على وسامك</p>
 <input id="name" placeholder="اكتب اسمك هنا">
-<br><br>
-<button onclick="make()">احصل على وسامي</button>
-<div id="result"><h2 id="showName"></h2><p>نمنحك هذا الوسام لأنك اخترت التسامح ❤️</p><p><b>#حملة_التسامح</b></p></div>
+<br>
+<button onclick="make()">احصل على وسامي ✨</button>
+<div id="result">
+<h2 id="out"></h2>
+<p>أنت شخص عظيم لأنك اخترت التسامح 🤍</p>
+<p>#حملة_التسامح</p>
+<button class="share" onclick="share()">مشاركة في واتساب 📲</button>
+</div>
 </div>
 <script>
 function make(){
 let n=document.getElementById('name').value;
 if(!n){alert('اكتب اسمك أولاً');return}
-document.getElementById('showName').innerText='🏅 '+n+' - سفير التسامح';
+document.getElementById('out').innerText='🏅 وسام التسامح لـ '+n;
 document.getElementById('result').style.display='block';
+}
+function share(){
+let n=document.getElementById('name').value;
+let t='حصلت على وسام التسامح 🏅🤍 اسمي: '+n+' #حملة_التسامح';
+window.open('https://wa.me/?text='+encodeURIComponent(t));
 }
 </script>
 </body>
